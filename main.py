@@ -1,4 +1,6 @@
+import eqlpy.eql_types
 import psycopg2
+import eqlpy
 
 def fetch_data_from_db():
   # Database connection parameters
@@ -27,7 +29,11 @@ def fetch_data_from_db():
     # Fetch and print all results
     results = cursor.fetchall()
     for row in results:
-      print(row)
+      if row[1]["k"] == "ct":
+        print (f"Ciphertext: {row[1]["c"]}")
+      else:
+        plaintext = eqlpy.eql_types.EqlText.from_parsed_json(row[1])
+        print(f"Plaintext: {plaintext}")
   
   except Exception as error:
     print(f"An error occurred: {error}")
