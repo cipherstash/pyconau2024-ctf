@@ -5,7 +5,7 @@ import eqlpy
 def fetch_data_from_db():
   # Database connection parameters
   host = "localhost"
-  port = 5432
+  port = 5442
   database = "postgres"
   user = "postgres"
   password = "postgres"
