@@ -1,7 +1,7 @@
 # PyCon 2024 Capture the Flag (CTF)
 
 Welcome to the PyCon 2024 Capture the Flag game! This environment uses [PostgreSQL](https://www.postgresql.org/) and [CipherStash](https://cipherstash.com/) to encrypt data in use.
-The database has been initialized with [Encrypt Query Language](https://github.com/cipherstash/encrypt-query-language) (EQL) and seeded with the encrypted flag. 
+The database has been initialized with [Encrypt Query Language](https://github.com/cipherstash/encrypt-query-language) (EQL) and seeded with the encrypted flag.
 The Python applications uses the [eqlpy](https://github.com/cipherstash/eqlpy) library to interact with the EQL payloads.
 
 ## Requirements
