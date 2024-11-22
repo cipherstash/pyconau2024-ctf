@@ -52,8 +52,12 @@ This will:
 To run the Python application, run the following command:
 
 ```bash
+# install dependencies
 python3 -m venv .venv
 source .venv/bin/activate
+pip install -r requirements.txt
+
+# run the app
 python main.py
 ```
 
