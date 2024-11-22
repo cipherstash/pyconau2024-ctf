@@ -52,7 +52,8 @@ This will:
 To run the Python application, run the following command:
 
 ```bash
-source venv/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 python main.py
 ```
 
