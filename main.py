@@ -30,7 +30,7 @@ def fetch_data_from_db():
     results = cursor.fetchall()
     for row in results:
       if row[1]["k"] == "ct":
-        print (f"Ciphertext: {row[1]["c"]}")
+        print (f"Ciphertext: {row[1]['c']}")
       else:
         plaintext = eqlpy.eql_types.EqlText.from_parsed_json(row[1])
         print(f"Plaintext: {plaintext}")
