@@ -8,15 +8,21 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     ports:
-      - ${PGPORT:-5432}:5432
+      - 5442:5442
     networks:
       - pycon-cta-nw
   proxy:
     container_name: pycon-cta-proxy
     image: cipherstash/cipherstash-proxy:cipherstash-proxy-v0.3.5
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     ports:
       - ${CS_PORT:-6432}:${CS_PORT:-6432}
     environment:

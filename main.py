@@ -5,7 +5,7 @@ import eqlpy
 def fetch_data_from_db():
   # Database connection parameters
   host = "localhost"
-  port = 5432
+  port = 5442
   database = "postgres"
   user = "postgres"
   password = "postgres"
@@ -21,11 +21,11 @@ def fetch_data_from_db():
     )
 
     cursor = connection.cursor()
-      
+
     # Execute the query
     query = "SELECT * FROM pycon_cta;"
     cursor.execute(query)
-      
+
     # Fetch and print all results
     results = cursor.fetchall()
     for row in results:
@@ -34,10 +34,10 @@ def fetch_data_from_db():
       else:
         plaintext = eqlpy.eql_types.EqlText.from_parsed_json(row[1])
         print(f"Plaintext: {plaintext}")
-  
+
   except Exception as error:
     print(f"An error occurred: {error}")
-  
+
   finally:
     if cursor:
       cursor.close()
